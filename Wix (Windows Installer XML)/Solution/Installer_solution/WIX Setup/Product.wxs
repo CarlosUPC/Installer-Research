@@ -5,7 +5,7 @@
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+		<MediaTemplate EmbedCab="yes" />
     
     
 <!-- ICON FRAGMENT-->  
@@ -25,7 +25,8 @@
     <WixVariable Id="WixUIBannerBmp" Value="assets\ui_background.bmp" />
     <WixVariable Id="WixUIDialogBmp" Value="assets\ui_background.bmp" />
     
-
+    <!-- TODO 7: Add Microsoft Software License into UI Dialog. -->
+     <WixVariable Id="WixUILicenseRtf" Value="assets\License.rtf" />
       
 <!-- FEATURE FRAGMENT-->
 		<Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
