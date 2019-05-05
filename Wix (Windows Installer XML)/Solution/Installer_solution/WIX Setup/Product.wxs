@@ -6,26 +6,60 @@
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate />
-
+    
+<!-- FEATURE FRAGMENT-->
 		<Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
       <!-- TODO 1: Add .exe project file from Release directory of the game. -->
       <ComponentRef Id="Motor_2D.exe"/>
-    
+      <!-- TODO 2: Add Start Menu Shortcut. -->
+      <ComponentRef Id="StartMenuShortcut" />
 		</Feature>
   
-  
 	</Product>
-
+  
+  
+  
+<!-- DIRECTORY SYSTEM FRAGMENT-->
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
 				<Directory Id="INSTALLFOLDER" Name="My UPC Game" />
+        
+      <!-- TODO 2: Add Start Menu Shortcut. -->
+         <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="My UPC Name"/>
+         </Directory>
+      
 			</Directory>
 		</Directory>
 	</Fragment>
 
-	<Fragment>
+  
+	
+<!-- SHORTCUT COMPONENTS FRAGMENT-->
+<Fragment>
+  <!-- TODO 2: Add Start Menu Shortcut. -->
+   <DirectoryRef Id="ApplicationProgramsFolder">
+       <Component Id="StartMenuShortcut" Guid="19769afe-ec61-4fdc-9538-42c25a6e8fc8">
+          <Shortcut Id="ApplicationStartMenuShortcut" 
+                 Name="My UPC Game" 
+                 Description="My UPC Game Description"
+                 Target="[#Motor_2D.exe]"
+                 WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+          <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+          <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+       </Component>
+   </DirectoryRef>
+   
+   <!-- TODO 3: Add Desktop Shortcut. -->
+  
+ </Fragment>
+      
+     
+      
+<!-- PROJECT FILES AND COMPONENTS FRAGMENT-->     
+<Fragment>
    
       <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
         <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
@@ -41,7 +75,6 @@
             </Component>  
        </DirectoryRef>
   
-  
+</Fragment>
 
-	</Fragment>
 </Wix>
