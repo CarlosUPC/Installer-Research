@@ -7,6 +7,13 @@
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate />
     
+    <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
+    <Icon Id="icon.ico" SourceFile="assets\iconTwitter.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+    
+    
+      
+      
 <!-- FEATURE FRAGMENT-->
 		<Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
@@ -51,7 +58,8 @@
                  Name="My UPC Game" 
                  Description="My UPC Game Description"
                  Target="[#Motor_2D.exe]"
-                 WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+                 WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                 Icon = "icon.ico"/>  <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
           <RemoveFolder Id="RemoveProgramsFolder" On="uninstall"/>
           <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
        </Component>
@@ -64,7 +72,8 @@
                  Name="My UPC Game" 
                  Description="My UPC Game Description"
                  Target="[#Motor_2D.exe]"
-                 WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+                 WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                 Icon = "icon.ico"/>  <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
           <RemoveFolder Id="RemoveDesktopFolder" On="uninstall"/>
           <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
        </Component>
@@ -87,7 +96,7 @@
    <!-- TODO 1: Add .exe project file from Release directory of the game. -->
        <DirectoryRef Id="INSTALLFOLDER">
             <Component Id="Motor_2D.exe" Guid="4b886816-febd-4e5c-a87f-923960027d5c">
-                <File Id="Motor_2D.exe" Source="..\Release\Motor 2D.exe" KeyPath="yes" Checksum="yes"/>
+                <File Id="Motor_2D.exe" Source="..\Release\Motor 2D.exe" KeyPath="yes" Checksum="yes" />
             </Component>  
        </DirectoryRef>
   
