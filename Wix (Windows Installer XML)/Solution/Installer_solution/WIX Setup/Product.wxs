@@ -30,14 +30,18 @@
       
 <!-- FEATURE FRAGMENT-->
 		<Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
+			
       <!-- TODO 1: Add .exe project file from Release directory of the game. -->
       <ComponentRef Id="Motor_2D.exe"/>
       <!-- TODO 2: Add Start Menu Shortcut. -->
       <ComponentRef Id="StartMenuShortcut" />
       <!-- TODO 3: Add Desktop Shortcut. -->
       <ComponentRef Id="DesktopShortcut" />
+      <!-- TODO 8: Decomment Heat Component Ref. -->
+      <ComponentGroupRef Id="HeatGenerated" />
 		</Feature>
+  
+ 
   
 	</Product>
   
@@ -60,6 +64,8 @@
       
 			</Directory>
 		</Directory>
+    
+  
 	</Fragment>
 
   
@@ -73,7 +79,7 @@
                  Name="My UPC Game" 
                  Description="My UPC Game Description"
                  Target="[#Motor_2D.exe]"
-                 WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                 WorkingDirectory="INSTALLFOLDER"
                  Icon = "icon.ico"/>  <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
           <RemoveFolder Id="RemoveProgramsFolder" On="uninstall"/>
           <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
@@ -87,7 +93,7 @@
                  Name="My UPC Game" 
                  Description="My UPC Game Description"
                  Target="[#Motor_2D.exe]"
-                 WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                 WorkingDirectory="INSTALLFOLDER"
                  Icon = "icon.ico"/>  <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
           <RemoveFolder Id="RemoveDesktopFolder" On="uninstall"/>
           <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
@@ -100,19 +106,16 @@
       
 <!-- PROJECT FILES AND COMPONENTS FRAGMENT-->     
 <Fragment>
-   
-      <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-        <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-        <!-- <Component Id="ProductComponent"> -->
-        <!-- TODO: Insert files, registry keys, and other resources here. -->
-        <!-- </Component> -->
-      </ComponentGroup>
-   
+      
+      
+  
    <!-- TODO 1: Add .exe project file from Release directory of the game. -->
        <DirectoryRef Id="INSTALLFOLDER">
             <Component Id="Motor_2D.exe" Guid="4b886816-febd-4e5c-a87f-923960027d5c">
                 <File Id="Motor_2D.exe" Source="..\Release\Motor 2D.exe" KeyPath="yes" Checksum="yes" />
-            </Component>  
+            </Component> 
+       
+
        </DirectoryRef>
   
 </Fragment>
