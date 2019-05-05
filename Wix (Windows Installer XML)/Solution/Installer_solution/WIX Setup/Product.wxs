@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="WIX_Setup" Language="1033" Version="1.0.0.0" Manufacturer="Pink King Games" UpgradeCode="e159f201-712d-4777-b961-d78b125bd2d1">
+   <!-- TODO 1: Customize primary setup parameters of the product -->
+	<Product Id="*" Name="My UPC Game" Language="1033" Version="1.0.0.0" Manufacturer="UPC Videogames" UpgradeCode="e159f201-712d-4777-b961-d78b125bd2d1">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -8,23 +9,39 @@
 
 		<Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+      <!-- TODO 1: Add .exe project file from Release directory of the game. -->
+      <ComponentRef Id="Motor_2D.exe"/>
+    
 		</Feature>
+  
+  
 	</Product>
 
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="WIX_Setup" />
+				<Directory Id="INSTALLFOLDER" Name="My UPC Game" />
 			</Directory>
 		</Directory>
 	</Fragment>
 
 	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
-		</ComponentGroup>
+   
+      <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+        <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+        <!-- <Component Id="ProductComponent"> -->
+        <!-- TODO: Insert files, registry keys, and other resources here. -->
+        <!-- </Component> -->
+      </ComponentGroup>
+   
+   <!-- TODO 1: Add .exe project file from Release directory of the game. -->
+       <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="Motor_2D.exe" Guid="4b886816-febd-4e5c-a87f-923960027d5c">
+                <File Id="Motor_2D.exe" Source="..\Release\Motor 2D.exe" KeyPath="yes" Checksum="yes"/>
+            </Component>  
+       </DirectoryRef>
+  
+  
+
 	</Fragment>
 </Wix>
