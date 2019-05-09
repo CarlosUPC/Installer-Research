@@ -1,4 +1,61 @@
 ﻿## Installer Research
+
+I am Carlos Peña Hernando, student of the Bachelor’s Degree in Video Games by UPC at CITM. This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://www.linkedin.com/in/ricardpillosu/?originalSubdomain=es).
+
+## About the project
+
+
+[Link to the repository.](https://github.com/CarlosUPC/Installer-Research)
+
+## Installing
+
+* Download last release from releases tab from the repository
+* Unzip Installer.zip
+* Execute Installer.exe
+
+## Built With
+Visual Studio - IDE
+SDL - Development library
+STL - Development library
+PugiXML - XML processing library
+
+
+## Author
+Carlos Peña Hernando - GitHub account: CarlosUPC Contact: wolfsea.yt@gmail.com
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+## Acknowledgments
+Special thanks to:
+* me
+* me
+* me
+* me
+* and... me
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  ## TODO'S
  
