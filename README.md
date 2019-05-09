@@ -3,7 +3,9 @@
 I am Carlos Peña Hernando, student of the Bachelor’s Degree in Video Games by UPC at CITM. This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://www.linkedin.com/in/ricardpillosu/?originalSubdomain=es).
 
 ## About the project
+This project contains a research about the installers and how to setup a project with xml integration. In this case, it has been used Wix Toolset extension to work with the research's scope.
 
+You can find information about Installer & Setup Projects in my [website]().
 
 [Link to the repository.](https://github.com/CarlosUPC/Installer-Research)
 
@@ -18,7 +20,7 @@ I am Carlos Peña Hernando, student of the Bachelor’s Degree in Video Games by
 * [SDL]() - Development library
 * [STL]() - Development library
 * [PugiXML]() - XML processing library
-
+* [Wix Toolset](http://wixtoolset.org/) - XML installer tool
 
 ## Author
 **Carlos Peña Hernando** - GitHub account: [CarlosUPC]() Contact: [wolfsea.yt@gmail.com]()
