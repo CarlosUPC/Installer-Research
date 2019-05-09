@@ -9,22 +9,22 @@ I am Carlos Peña Hernando, student of the Bachelor’s Degree in Video Games by
 
 ## Installing
 
-* Download last release from releases tab from the repository
+* Download last release from [releases]() tab from the [repository]()
 * Unzip Installer.zip
 * Execute Installer.exe
 
 ## Built With
-Visual Studio - IDE
-SDL - Development library
-STL - Development library
-PugiXML - XML processing library
+* [Visual Studio]() - IDE
+* [SDL]() - Development library
+* [STL]() - Development library
+* [PugiXML]() - XML processing library
 
 
 ## Author
-Carlos Peña Hernando - GitHub account: CarlosUPC Contact: wolfsea.yt@gmail.com
+**Carlos Peña Hernando** - GitHub account: [CarlosUPC]() Contact: [wolfsea.yt@gmail.com]()
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md]() file for details
 
 ## Acknowledgments
 Special thanks to:
