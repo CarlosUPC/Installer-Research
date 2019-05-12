@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   <!-- TODO 1: Customize primary setup parameters of the product -->
+	<Product Id="*" Name="My UPC Game" Language="1033" Version="1.0.0.0" Manufacturer="UPC Videogames" UpgradeCode="e159f201-712d-4777-b961-d78b125bd2d1">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+    
+    
+<!-- ICON FRAGMENT-->  
+    
+    <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
+   
+    
+    
+<!-- UI DIALOG FRAGMENT-->
+    
+    <!-- TODO 5: Add UI Dialog theme (installDir). -->
+   
+    
+    <!-- TODO 6: Customize UI Dialog theme with bmp files. -->
+    
+    
+    <!-- TODO 7: Add Microsoft Software License into UI Dialog. -->
+     
+      
+<!-- FEATURE FRAGMENT-->
+		<Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
+			
+      <!-- TODO 1: Add .exe project file from Release directory of the game. -->
+     
+      <!-- TODO 2: Add Start Menu Shortcut. -->
+      
+      <!-- TODO 3: Add Desktop Shortcut. -->
+     
+      <!-- TODO 8: Decomment Heat Component Ref. -->
+      
+		</Feature>
+  
+ 
+  
+	</Product>
+  
+  
+   
+  
+<!-- DIRECTORY SYSTEM FRAGMENT-->
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="My UPC Game" />
+        
+      <!-- TODO 2: Add Start Menu Shortcut. -->
+        
+      
+      <!-- TODO 3: Add Desktop Shortcut. -->
+        
+      
+			</Directory>
+		</Directory>
+    
+  
+	</Fragment>
+
+  
+	
+<!-- SHORTCUT COMPONENTS FRAGMENT-->
+<Fragment>
+  <!-- TODO 2: Add Start Menu Shortcut. -->
+   
+   
+   <!-- TODO 3: Add Desktop Shortcut. -->
+  
+
+ </Fragment>
+      
+     
+      
+<!-- PROJECT FILES AND COMPONENTS FRAGMENT-->     
+<Fragment>
+      
+  
+   <!-- TODO 1: Add .exe project file from Release directory of the game. -->
+      
+       
+  
+</Fragment>
+
+</Wix>
