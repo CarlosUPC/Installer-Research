@@ -345,3 +345,51 @@ Into product fragment:
  
 ## Acknowledgements and Webgraphy
 
+[Application Packaging: Basics and Benefits](https://www.symantec.com/connect/articles/application-packaging-basics-and-benefits)
+
+[Installation (computer programs)](https://en.wikipedia.org/wiki/Installation_(computer_programs))
+
+[What are the benefits of a MSI installer over a standard setup.exe?](https://stackoverflow.com/questions/3976241/what-are-the-benefits-of-a-msi-installer-over-a-standard-setup-exe)
+
+[What is the benefit and real purpose of program installation?
+](https://stackoverflow.com/questions/22733889/what-is-the-benefit-and-real-purpose-of-program-installation)
+
+[What installation product to use? InstallShield, WiX, Wise, Advanced Installer, etc
+](https://stackoverflow.com/questions/1544292/what-installation-product-to-use-installshield-wix-wise-advanced-installer/1546941#1546941)
+
+[Windows Installer](https://docs.microsoft.com/es-es/windows/desktop/Msi/windows-installer-portal)
+
+[The Basics of Application Packaging:
+Best Practices for Enabling Reduced Software Management Costs](https://www.dell.com/downloads/global/power/ps4q05-20050175-Kouletsis.pdf)
+
+[Wix Resources](https://www.firegiant.com/wix/)
+
+[WiX Toolset Manual Table of Contents](http://wixtoolset.org/documentation/manual/v3/)
+
+[Wix Toolset 3.11 github](https://github.com/wixtoolset/wix3)
+
+[Free software for Windows installers: NSIS vs. WiX? 
+](https://stackoverflow.com/questions/458900/free-software-for-windows-installers-nsis-vs-wix)
+
+[stackoverflow wix tags](https://stackoverflow.com/questions/tagged/wix?sort=newest)
+
+[Free software for Windows installers: NSIS vs. WiX?
+](https://www.add-in-express.com/creating-addins-blog/tag/wix/)
+
+[What is MSI Installer?](https://smallbusiness.chron.com/msi-installer-56267.html)
+
+[Windows Installer Wikipedia](https://en.wikipedia.org/wiki/Windows_Installer)
+
+[MSI Format](https://whatis.techtarget.com/fileformat/MSI-Installer-package-Microsoft-Windows)
+
+[Overview of the Windows Installer Technology](https://support.microsoft.com/en-ca/help/310598/overview-of-the-windows-installer-technology)
+
+[What is the difference between client application and service application?](https://www.quora.com/What-is-the-difference-between-client-application-and-service-application)
+
+[About the Windows Installer Service](http://www.installsite.org/pages/en/w2k_aboutmsi.htm)
+
+[Application Packaging Training- AdminStudio, InstallShield Course](https://www.udemy.com/application-packaging-training-adminstudio-installshield/)
+
+[Installation and Maintenance of Games](https://docs.microsoft.com/en-us/windows/desktop/dxtecharts/installation-and-maintenance-of-games)
+
+[Windows Installer for Game Developers](https://docs.microsoft.com/en-us/windows/desktop/dxtecharts/windows-installer-for-game-developers)
