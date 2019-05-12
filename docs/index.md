@@ -198,7 +198,7 @@ Most of the custom functionalities mentioned above are now available in the WiX 
 
  ```
  
-  ### Directory System fragment:
+### Directory System fragment:
   ```cpp
   
  <Fragment>
@@ -218,7 +218,7 @@ Most of the custom functionalities mentioned above are now available in the WiX 
 		</Directory>
  ```
  
- ### Shortcut Components fragment:
+### Shortcut Components fragment:
   ```cpp
  <Fragment>
   
@@ -252,14 +252,14 @@ Most of the custom functionalities mentioned above are now available in the WiX 
       
  ```
  
- ### Icon section:
+### Icon section:
   ```cpp
   
 <Icon Id="icon.ico" SourceFile="assets\iconTwitter.ico" />
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
     
  ```
-  ### UI Dialog section:
+### UI Dialog section:
   
    ```cpp
   
@@ -272,7 +272,7 @@ Most of the custom functionalities mentioned above are now available in the WiX 
     <WixVariable Id="WixUILicenseRtf" Value="assets\License.rtf" />
    ``` 
     
- ### UI Dialog section:
+### UI Dialog section:
  
   ```cpp
  <Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
