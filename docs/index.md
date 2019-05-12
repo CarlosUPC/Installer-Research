@@ -187,37 +187,136 @@ Most of the custom functionalities mentioned above are now available in the WiX 
  
 ## Wix Toolset Integration code
  
-## Links to more documentation
+
  
 ## TODO's and Solutions
  
-### TODO1
- * Expected result
- * Solution
-### TODO2
-  * Expected result
- * Solution
-### TODO3
-  * Expected result
- * Solution
-### TODO4
-  * Expected result
- * Solution
-### TODO5
-  * Expected result
- * Solution
-### TODO6
- * Expected result
- * Solution
-### TODO7
-   * Expected result
- * Solution
-### TODO8
-   * Expected result
- * Solution
+### TODO1 : Customize product features + mapping exe project file
+
+Expected result
+
+Solution
+
+```cpp
+<DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="Motor_2D.exe" Guid="4b886816-febd-4e5c-a87f-923960027d5c">
+                <File Id="Motor_2D.exe" Source="..\Release\Motor 2D.exe" KeyPath="yes" Checksum="yes" />
+            </Component> 
+       </DirectoryRef>
+
+```
+
+ ```cpp
+ <ComponentRef Id="Motor_2D.exe"/>
+ ```
  
+ 
+### TODO2 : Add Desktop Shortcut
+Expected result
+Solution
+
+ ```cpp
+<Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="My UPC Name"/>
+         </Directory>
+   ```       
+   
+   ```cpp      
+ <DirectoryRef Id="ApplicationProgramsFolder">
+       <Component Id="StartMenuShortcut" Guid="19769afe-ec61-4fdc-9538-42c25a6e8fc8">
+          <Shortcut Id="ApplicationStartMenuShortcut" 
+                 Name="My UPC Game" 
+                 Description="My UPC Game Description"
+                 Target="[#Motor_2D.exe]"
+                 WorkingDirectory="INSTALLFOLDER"
+                 Icon = "icon.ico"/>  <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
+          <RemoveFolder Id="RemoveProgramsFolder" On="uninstall"/>
+          <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+       </Component>
+   </DirectoryRef>
+   
+   ```
+    
+   ```cpp
+   <ComponentRef Id="StartMenuShortcut" />   
+   ```
+   
+         
+### TODO3 : Add Desktop Shortcut
+ Expected result
+ Solution
+ ```cpp
+ <Directory Id="DesktopFolder" Name="My UPC Game" />
+ 
+ ```
+ ```cpp
+ <DirectoryRef Id="DesktopFolder">
+       <Component Id="DesktopShortcut" Guid="5694ea64-2b00-4584-a671-d26134c1de38">
+          <Shortcut Id="ApplicationDesktopShortcut" 
+                 Name="My UPC Game" 
+                 Description="My UPC Game Description"
+                 Target="[#Motor_2D.exe]"
+                 WorkingDirectory="INSTALLFOLDER"
+                 Icon = "icon.ico"/>  <!-- TODO 4: Implement Control Panel Icon + Shortcut Icons. -->
+          <RemoveFolder Id="RemoveDesktopFolder" On="uninstall"/>
+          <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+       </Component>
+   </DirectoryRef>
+   ```
+   
+```cpp
+<ComponentRef Id="DesktopShortcut" />
+```
+
+
+### TODO4 : Implement control panel icon + exe project icon (shortcuts)
+ Expected result
+ Solution
+ 
+ ```cpp
+ <Icon Id="icon.ico" SourceFile="assets\iconTwitter.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+ ```
+### TODO5 : Add UI Dialog theme (installDir)
+ Expected result
+ Solution
+ 
+ ```cpp
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir" />
+  ```
+  
+### TODO6 : Customize UI Dialog theme with bmp files
+ Expected result
+ Solution
+ 
+ ```cpp
+ <WixVariable Id="WixUIBannerBmp" Value="assets\ui_background.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="assets\ui_background.bmp" />
+  ```
+  
+### TODO7 : Add Windows License into UI Dialog
+ Expected result
+ Solution
+ ```cpp
+  <WixVariable Id="WixUILicenseRtf" Value="assets\License.rtf" />
+ ```
+### TODO8 : Decomment game components (dll, assets. etc)
+ Expected result
+ Solution
+ 
+ ```cpp
+  <ComponentGroupRef Id="HeatGenerated" />
+   ```
 ## Improvements
  
 ## Acknowledgements and Webgraphy
 
-
+TODO 1 -> Customize produtct features + mapping exe project file
+TODO 2 -> Add Desktop Shortcut
+TODO 3 -> Add Start Menu Shortcut
+TODO 4 -> Implement control panel icon + exe project icon (shortcuts)
+TODO 5 -> Add UI Dialog theme (installDir)
+TODO 6 -> Customize UI Dialog theme with bmp files
+TODO 7 -> Add Windows License into UI Dialog
+TODO 8 -> Decomment game components (dll, assets. etc)
