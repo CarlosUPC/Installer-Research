@@ -33,7 +33,7 @@ Applications are typically more than a single executable. They often contain:
 
 ### Application packages Formats
 
-* Application packages include formats such as:
+ Application packages include formats such as:
 * Microsoft Windows Installer -> Setup.msi
 * Legacy executables -> Setup.exe
 * Windows store .appx
