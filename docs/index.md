@@ -81,30 +81,53 @@ Windows Installer has many built-in functions that save time and effort.
 
 ### MSI files and components
 
-### What is a .msi file?
-A file with .msi extension is a simple database file that can be read by Microsoft Windows Installer service contained in all recent versions of Microsoft Windows. The database contains the files, registry and instructions to the Windows Installer service in order to install the application.
+**.msi file** : A file with .msi extension is a simple database file that can be read by Microsoft Windows Installer service contained in all recent versions of Microsoft Windows. The database contains the files, registry and instructions to the Windows Installer service in order to install the application.
 
-### What is a Msiexec.exe ?
-The Msiexec.exe program is a component of Windows Installer. When it is called by Setup, Msiexec.exe uses Msi.dll to read the package (.msi) files, apply any transform (.mst) files, and incorporate command-line options supplied by Setup. 
+ **Msiexec.exe** : The Msiexec.exe program is a component of Windows Installer. When it is called by Setup, Msiexec.exe uses Msi.dll to read the package (.msi) files, apply any transform (.mst) files, and incorporate command-line options supplied by Setup. 
 
 The installer performs all installation-related tasks, including copying files to the hard disk, making registry modifications, creating shortcuts on the desktop, and displaying dialog boxes to prompt for user installation preferences when necessary.
 
 When Windows Installer is installed on a computer, it changes the registered file type of .msi files so that if you double-click an .msi file, Msiexec.exe runs with that file.
 
-### MSI Extensions
-Each installation package includes an .msi file containing the installation database, a summary information stream, and data streams for various parts of the installation. The .msi file can also contain one or more transforms, internal source files, and external source files or cabinet files required by the installation
+**MSI Extensions** : Each installation package includes an .msi file containing the installation database, a summary information stream, and data streams for various parts of the installation. The .msi file can also contain one or more transforms, internal source files, and external source files or cabinet files required by the installation
 
 ### What MSI Supports?
-As a Service, Windows Installer is designed to support software installations as the local Administrator role in locked environments, enhancing the application process. 
-
+ 
 Windows Installer can support applications installed from a network share—referred to as an administrative installation—or locally on an end user’s PC. The downside to using a network share can be that systems receive patches or repairs only when they are connected to the network, which may be a consideration for organizations supporting many notebook users.
 
-### Creating MSI files
+### MSI Packaging and Deployment Tools
 
 Creating MSI files To build the installation package in the correct MSI database format, developers must collect information about each application. Items include executable files, installation instructions, configuration parameters, test instructions, and hardware and software dependencies. 
 
 Best practices recommend that installation packages be created by experienced packaging engineers, using **tools** specifically developed for that purpose. 
 
+Industry leaders for MSI creation are generally **Advanced Installer**, **Installshield** and the open source solution **WiX**  - which you seem somewhat familiar with.
+
+## MSI packaging tool selected: WIX Toolset
+
+WiX
+* The big plus is the text source files. There is no need to store the source as a binary where it is almost impossible to track changes and do proper version control.
+
+    * Proper text sources make all the difference for development teams in terms of branching, versioning and merging. It is a quantum leap (in my opinion particularly for in-house development in large corporations - where process is complex, turnaround is quick and there are many developers).
+    * The need for and use of text source files was central to the creation of the WiX toolkit. 
+    *  Some deployment tools that store the installer as binaries could end up in situations where the binary source would exhibit mysterious problems that could never be tracked down properly.
+ 
+* Rock solid, very few significant bugs.
+    * For those who have struggled with long-standing, intermittent, unexplainable bugs in other tools, this is a godsend. {War stories removed}.
+    * And even better: problems actually seem to get fixed in WiX, sometimes with community help - as is appropriate for an open source toolkit. Most of the time it seems the core team takes care of it though.
+ 
+* Very feature rich, but somewhat hard to use at times.
+    * Takes time to get used to, and even when you are used to it things can be "fiddly" to get right (particularly if you don't use the included helper tools properly).
+    * It helps to use the dark.exe decompiler tool to decompile existing MSI files to WiX XML. This allows you to study the WiX source without knowing too much about it beforehand.
+    * Exceptional customizability for complex things such as IIS, COM+, SQL Server, permissioning, firewall rules, etc... "Everything" is possible, but somewhat involved at times.
+    * WiX effectively "extends Windows Installer" with new and much needed functionality. This is a massive benefit for everyone who previously had to "roll their own" solutions - often for things that seemed trivial (but was still very error prone).
+    * The power of these extensions can not be overstated. You can get rid of a lot of self-written, complex custom actions in favor of tested solutions. With proper rollback support! (a much neglected feature in vendor setups - in my experience almost all of them - causing unclean system state after aborted setups).
+    * I have personal experience writing a C++ dll with custom actions for common tasks with proper rollback support, and the amount of work was staggering - especially the QA of the actual rollback feature.
+
+* A remarkable lack of GUI tools and very few good samples available - particularly for WiX 4.
+* Full integration in Visual Studio, with IntelliSense.
+* It's free (!). Every developer can build the setup. Someone must own it though(!). Really ;-).
+* It is Open Source too. The "community":[https://github.com/wixtoolset](https://github.com/wixtoolset). 
 
 ## Different approaches
  
