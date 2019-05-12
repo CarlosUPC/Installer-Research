@@ -181,21 +181,20 @@ Custom actions that make modifications to the system run with elevated rights so
 Custom actions are the leading causes of deployment errors and failure.
 
 Most of the custom functionalities mentioned above are now available in the WiX framework as a custom C++ dll - and other tools have some similar, custom features.
-## Different approaches
- 
-## Selected approach
+
  
 ## Wix Toolset Integration code
  
-
  
 ## TODO's and Solutions
  
 ### TODO1 : Customize product features + mapping exe project file
 
-Expected result
+### Explication:
 
-Solution
+### Test:
+
+### Solution:
 
 ```cpp
 <DirectoryRef Id="INSTALLFOLDER">
@@ -212,8 +211,11 @@ Solution
  
  
 ### TODO2 : Add Desktop Shortcut
-Expected result
-Solution
+### Explication:
+
+### Test:
+
+### Solution:
 
  ```cpp
 <Directory Id="ProgramMenuFolder">
@@ -243,8 +245,11 @@ Solution
    
          
 ### TODO3 : Add Desktop Shortcut
- Expected result
- Solution
+### Explication:
+
+### Test:
+
+ ### Solution:
  ```cpp
  <Directory Id="DesktopFolder" Name="My UPC Game" />
  
@@ -270,16 +275,22 @@ Solution
 
 
 ### TODO4 : Implement control panel icon + exe project icon (shortcuts)
- Expected result
- Solution
+### Explication:
+
+### Test:
+
+### Solution:
  
  ```cpp
  <Icon Id="icon.ico" SourceFile="assets\iconTwitter.ico" />
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
  ```
 ### TODO5 : Add UI Dialog theme (installDir)
- Expected result
- Solution
+### Explication:
+
+### Test:
+
+### Solution:
  
  ```cpp
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
@@ -287,8 +298,11 @@ Solution
   ```
   
 ### TODO6 : Customize UI Dialog theme with bmp files
- Expected result
- Solution
+### Explication:
+
+### Test:
+
+### Solution:
  
  ```cpp
  <WixVariable Id="WixUIBannerBmp" Value="assets\ui_background.bmp" />
@@ -296,27 +310,25 @@ Solution
   ```
   
 ### TODO7 : Add Windows License into UI Dialog
- Expected result
- Solution
+### Explication:
+
+### Test:
+
+### Solution:
  ```cpp
   <WixVariable Id="WixUILicenseRtf" Value="assets\License.rtf" />
  ```
 ### TODO8 : Decomment game components (dll, assets. etc)
- Expected result
- Solution
+### Explication:
+
+### Test:
+
+### Solution:
  
  ```cpp
   <ComponentGroupRef Id="HeatGenerated" />
    ```
-## Improvements
+   
  
 ## Acknowledgements and Webgraphy
 
-TODO 1 -> Customize produtct features + mapping exe project file
-TODO 2 -> Add Desktop Shortcut
-TODO 3 -> Add Start Menu Shortcut
-TODO 4 -> Implement control panel icon + exe project icon (shortcuts)
-TODO 5 -> Add UI Dialog theme (installDir)
-TODO 6 -> Customize UI Dialog theme with bmp files
-TODO 7 -> Add Windows License into UI Dialog
-TODO 8 -> Decomment game components (dll, assets. etc)
