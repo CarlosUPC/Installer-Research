@@ -185,6 +185,103 @@ Most of the custom functionalities mentioned above are now available in the WiX 
  
 ## Wix Toolset Integration code
  
+### Project files and components fragment:
+ ```cpp
+
+<Fragment>
+       <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="Motor_2D.exe" Guid="4b886816-febd-4e5c-a87f-923960027d5c">
+                <File Id="Motor_2D.exe" Source="..\Release\Motor 2D.exe" KeyPath="yes" Checksum="yes" />
+            </Component> 
+       </DirectoryRef>
+</Fragment>
+
+ ```
+ 
+  ### Directory System fragment:
+  ```cpp
+  
+ <Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="My UPC Game" />
+        
+      
+         <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="My UPC Name"/>
+         </Directory>
+      
+      
+        <Directory Id="DesktopFolder" Name="My UPC Game" />
+      
+			</Directory>
+		</Directory>
+ ```
+ 
+ ### Shortcut Components fragment:
+  ```cpp
+ <Fragment>
+  
+   <DirectoryRef Id="ApplicationProgramsFolder">
+       <Component Id="StartMenuShortcut" Guid="19769afe-ec61-4fdc-9538-42c25a6e8fc8">
+          <Shortcut Id="ApplicationStartMenuShortcut" 
+                 Name="My UPC Game" 
+                 Description="My UPC Game Description"
+                 Target="[#Motor_2D.exe]"
+                 WorkingDirectory="INSTALLFOLDER"
+                 Icon = "icon.ico"/>  
+          <RemoveFolder Id="RemoveProgramsFolder" On="uninstall"/>
+          <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+       </Component>
+   </DirectoryRef>
+   
+  <DirectoryRef Id="DesktopFolder">
+       <Component Id="DesktopShortcut" Guid="5694ea64-2b00-4584-a671-d26134c1de38">
+          <Shortcut Id="ApplicationDesktopShortcut" 
+                 Name="My UPC Game" 
+                 Description="My UPC Game Description"
+                 Target="[#Motor_2D.exe]"
+                 WorkingDirectory="INSTALLFOLDER"
+                 Icon = "icon.ico"/>  
+          <RemoveFolder Id="RemoveDesktopFolder" On="uninstall"/>
+          <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+       </Component>
+   </DirectoryRef>
+
+ </Fragment>
+      
+ ```
+ 
+ ### Icon section:
+  ```cpp
+  
+<Icon Id="icon.ico" SourceFile="assets\iconTwitter.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+    
+ ```
+  ### UI Dialog section:
+  
+   ```cpp
+  
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir" />
+   
+    
+    <WixVariable Id="WixUIBannerBmp" Value="assets\ui_background.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="assets\ui_background.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="assets\License.rtf" />
+   ``` 
+    
+ ### UI Dialog section:
+ 
+  ```cpp
+ <Feature Id="ProductFeature" Title="WIX_Setup" Level="1">
+      <ComponentRef Id="Motor_2D.exe"/>
+      <ComponentRef Id="StartMenuShortcut" />
+      <ComponentRef Id="DesktopShortcut" />
+      <ComponentGroupRef Id="HeatGenerated" />
+		</Feature>
+ ```
  
 ## TODO's and Solutions
 In order to perform the following exercises, it is highly recommended to spend some time reading the documentation / user manual provided by the Wix Toolset framework. You can access directly by clicking [here](http://wixtoolset.org/documentation/).
