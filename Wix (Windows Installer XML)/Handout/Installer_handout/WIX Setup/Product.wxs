@@ -35,7 +35,7 @@
       <!-- TODO 3: Add Desktop Shortcut. -->
      
       <!-- TODO 8: Decomment Heat Component Ref. -->
-      
+      <!-- <ComponentGroupRef Id="HeatGenerated" /> -->
 		</Feature>
   
  
