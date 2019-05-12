@@ -187,15 +187,17 @@ Most of the custom functionalities mentioned above are now available in the WiX 
  
  
 ## TODO's and Solutions
- 
+In order to perform the following exercises, it is highly recommended to spend some time reading the documentation / user manual provided by the Wix Toolset framework. You can access directly by clicking [here](http://wixtoolset.org/documentation/).
+
 ### TODO1 : Customize product features + mapping exe project file
 
-### Explication:
+#### Explication:
+You have to add the .exe file of the project by creating a "component" element in the appropriate fragment. Once created, you must add the required attributes (ID and GUID) and create as your child a "File" element where you have to add your path as an attribute. You must use the "DirectoryRef" element to reference the folder where you want the .exe file to be copied and use the "ComponentRef" element in the feature section to tell the framework to execute said action.
+#### Test:
+If you run the .msi file generated after build WIX Setup project, the executable will be installed silently on your computer. You can find it both in the **ProgramFilesFolder** directory in its corresponding folder and in the **Control Panel**.
 
-### Test:
-
-### Solution:
-
+#### Solution:
+Into Component fragment:
 ```cpp
 <DirectoryRef Id="INSTALLFOLDER">
             <Component Id="Motor_2D.exe" Guid="4b886816-febd-4e5c-a87f-923960027d5c">
@@ -204,25 +206,27 @@ Most of the custom functionalities mentioned above are now available in the WiX 
        </DirectoryRef>
 
 ```
-
+Into Feature fragment:
  ```cpp
  <ComponentRef Id="Motor_2D.exe"/>
  ```
  
  
-### TODO2 : Add Desktop Shortcut
-### Explication:
+### TODO2 : Add Start Menu Shortcut
+#### Explication:
+You have to add in the directory system the "ProgramsMenuFolder" directory and inside it create the directory where to instantiate the shortcut of the start menu. Then you must create it as a "component" element following the directrizes used in the previous TODO and add as a child the "Shortcut" element where you should indicate the .exe that you want the shortcut to point to. Finally, use the "ComponentRef" element to warn the framework to execute the instruction.
+#### Test:
+If you run the .msi file generated after build WIX Setup project, the executable will be installed silently on your computer and the start menu shortcut will be instanced in the start menu of your computer. You can also find the folder where the shortcut is in the **"ProgramMenuFolder"** directory
 
-### Test:
+#### Solution:
 
-### Solution:
-
+Into Directory System fragment:
  ```cpp
 <Directory Id="ProgramMenuFolder">
                 <Directory Id="ApplicationProgramsFolder" Name="My UPC Name"/>
          </Directory>
    ```       
-   
+Into Shortcut Component fragment:
    ```cpp      
  <DirectoryRef Id="ApplicationProgramsFolder">
        <Component Id="StartMenuShortcut" Guid="19769afe-ec61-4fdc-9538-42c25a6e8fc8">
@@ -238,22 +242,25 @@ Most of the custom functionalities mentioned above are now available in the WiX 
    </DirectoryRef>
    
    ```
-    
+ Into Feature fragment:
    ```cpp
    <ComponentRef Id="StartMenuShortcut" />   
    ```
    
          
 ### TODO3 : Add Desktop Shortcut
-### Explication:
+#### Explication: 
+Do the same as in the previous TODO, with the difference that the folder where the desktop shortcut will be instantiated does not need any extra directory.
+#### Test:
+If you run the .msi file generated after build WIX Setup project, the executable will be installed silently on your computer and the Desktop shortcut will be instanciated on your Computer Desktop.
+#### Solution:
 
-### Test:
-
- ### Solution:
+Into Directory System fragment:
  ```cpp
  <Directory Id="DesktopFolder" Name="My UPC Game" />
  
  ```
+ Into Shortcut Component fragment:
  ```cpp
  <DirectoryRef Id="DesktopFolder">
        <Component Id="DesktopShortcut" Guid="5694ea64-2b00-4584-a671-d26134c1de38">
@@ -268,29 +275,31 @@ Most of the custom functionalities mentioned above are now available in the WiX 
        </Component>
    </DirectoryRef>
    ```
-   
+ Into Feature fragment:  
 ```cpp
 <ComponentRef Id="DesktopShortcut" />
 ```
 
 
 ### TODO4 : Implement control panel icon + exe project icon (shortcuts)
-### Explication:
-
-### Test:
-
-### Solution:
+#### Explication:
+For shortcut icons, you just need to modify shortcut components you created before adding the attribute "Icon" inside Shortcut element. For control panel icon, you need to import the icon.ico using the "Icon" element and adding a property to work property with the control panel of your computer.
+#### Test:
+If you run the .msi file generated after build WIX Setup project, the executable will be installed silently on your computer and you will find all the shortcuts and control panel with icon.
+#### Solution:
  
+ Into product fragment:
  ```cpp
  <Icon Id="icon.ico" SourceFile="assets\iconTwitter.ico" />
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
  ```
+ 
 ### TODO5 : Add UI Dialog theme (installDir)
-### Explication:
+#### Explication:
 
-### Test:
+#### Test:
 
-### Solution:
+#### Solution:
  
  ```cpp
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
@@ -298,11 +307,11 @@ Most of the custom functionalities mentioned above are now available in the WiX 
   ```
   
 ### TODO6 : Customize UI Dialog theme with bmp files
-### Explication:
+#### Explication:
 
-### Test:
+#### Test:
 
-### Solution:
+#### Solution:
  
  ```cpp
  <WixVariable Id="WixUIBannerBmp" Value="assets\ui_background.bmp" />
@@ -310,20 +319,20 @@ Most of the custom functionalities mentioned above are now available in the WiX 
   ```
   
 ### TODO7 : Add Windows License into UI Dialog
-### Explication:
+#### Explication:
 
-### Test:
+#### Test:
 
-### Solution:
+#### Solution:
  ```cpp
   <WixVariable Id="WixUILicenseRtf" Value="assets\License.rtf" />
  ```
 ### TODO8 : Decomment game components (dll, assets. etc)
-### Explication:
+#### Explication:
 
-### Test:
+#### Test:
 
-### Solution:
+#### Solution:
  
  ```cpp
   <ComponentGroupRef Id="HeatGenerated" />
