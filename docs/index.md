@@ -293,14 +293,17 @@ If you run the .msi file generated after build WIX Setup project, the executable
  <Icon Id="icon.ico" SourceFile="assets\iconTwitter.ico" />
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
  ```
- 
+ Into Shortcuts fragment:
+ ```cpp
+ Icon = "icon.ico"/>
+  ```
 ### TODO5 : Add UI Dialog theme (installDir)
 #### Explication:
-
+First, you have to add to the wixsetup project as a reference the "WixUIExtension" dll provided by Wix Toolset and once imported, you have to use the external element "UIRef" with the appropriate property to generate the chosen dialog theme (in this case, will use the InstallDir).
 #### Test:
-
+If you run the .msi file generated after build WIX Setup project, for the first time the dialog boxes will be executed and the user will be able to interact with the installer and its characteristics, such as the path where to install the program, accept the license, etc.
 #### Solution:
- 
+Into product fragment:
  ```cpp
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
     <UIRef Id="WixUI_InstallDir" />
@@ -308,11 +311,11 @@ If you run the .msi file generated after build WIX Setup project, the executable
   
 ### TODO6 : Customize UI Dialog theme with bmp files
 #### Explication:
-
+You have to use the "WixVariable" element to be able to import the path of the bitmap files with the correct ID.
 #### Test:
-
+If you run the .msi file generated after build WIX Setup project, the dialog boxes will have been customized with the imported bitmap files.
 #### Solution:
- 
+ Into product fragment:
  ```cpp
  <WixVariable Id="WixUIBannerBmp" Value="assets\ui_background.bmp" />
     <WixVariable Id="WixUIDialogBmp" Value="assets\ui_background.bmp" />
@@ -320,20 +323,21 @@ If you run the .msi file generated after build WIX Setup project, the executable
   
 ### TODO7 : Add Windows License into UI Dialog
 #### Explication:
-
+You need to do the same as previous TODO using "WixVariable" element and import License.rtf file
 #### Test:
-
+If you run the .msi file generated after build WIX Setup project, the dialog box where displays the Lore Ipsum language will be changed to the License you imported.
 #### Solution:
+Into product fragment:
  ```cpp
   <WixVariable Id="WixUILicenseRtf" Value="assets\License.rtf" />
  ```
-### TODO8 : Decomment game components (dll, assets. etc)
+### TODO8 : Uncomment game components (dll, assets. etc)
 #### Explication:
-
+Uncomment ComponentGroupRef to make enable the game components and dll's and enjoy the awesome game you have installed
 #### Test:
-
+If you run the .msi file generated after build WIX Setup project, the executable will work property.
 #### Solution:
- 
+Into product fragment:
  ```cpp
   <ComponentGroupRef Id="HeatGenerated" />
    ```
