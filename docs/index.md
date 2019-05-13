@@ -254,7 +254,8 @@ You can download ISO files from Microsoft Windows 7/8/10 [here](https://develope
 You can download VirtualBox machine [here](https://www.virtualbox.org/wiki/Downloads)
 
 ## Wix Toolset Integration code
- 
+The code integrated into the wxs file that is part of the Wix framework is very easy to read and intuitive. It is organized by fragments, which each one is responsible for managing specific features to address a correct deployment for our application.
+
 ### Project files and components fragment:
  ```cpp
 
@@ -381,9 +382,9 @@ Into Feature fragment:
  
 ### TODO2 : Add Start Menu Shortcut
 #### Explication:
-You have to add in the directory system the "ProgramsMenuFolder" directory and inside it create the directory where to instantiate the shortcut of the start menu. Then you must create it as a "component" element following the directrizes used in the previous TODO and add as a child the "Shortcut" element where you should indicate the .exe that you want the shortcut to point to. Finally, use the "ComponentRef" element to warn the framework to execute the instruction.
+You have to add in directory system section the "ProgramsMenuFolder" directory and inside it, create the directory where to instantiate the start menu shortcut. Then, you must create it as a "component" element following the guidelines used in the previous TODO and add as a child the "Shortcut" element where you have to indicate the .exe that you want the shortcut to point to. Finally, use the "ComponentRef" element to notice the framework to execute the instruction.
 #### Test:
-If you run the .msi file generated after build WIX Setup project, the executable will be installed silently on your computer and the start menu shortcut will be instanced in the start menu of your computer. You can also find the folder where the shortcut is in the **"ProgramMenuFolder"** directory
+If you run the .msi file generated after build WIX Setup project, the executable will be installed silently on your computer and the start menu shortcut will be instanced in the start menu of your computer. You can also find the folder created where the shortcut was generated in **"ProgramMenuFolder"** directory
 
 #### Solution:
 
@@ -450,7 +451,7 @@ Into Directory System fragment:
 
 ### TODO4 : Implement control panel icon + exe project icon (shortcuts)
 #### Explication:
-For shortcut icons, you just need to modify shortcut components you created before adding the attribute "Icon" inside Shortcut element. For control panel icon, you need to import the icon.ico using the "Icon" element and adding a property to work property with the control panel of your computer.
+For shortcut icons, you just need to modify shortcut components you created before adding the attribute "Icon" inside Shortcut element. For control panel icon, you need to import the icon.ico using the "Icon" element and adding a property to work property with the control panel from your computer.
 #### Test:
 If you run the .msi file generated after build WIX Setup project, the executable will be installed silently on your computer and you will find all the shortcuts and control panel with icon.
 #### Solution:
@@ -466,9 +467,9 @@ If you run the .msi file generated after build WIX Setup project, the executable
   ```
 ### TODO5 : Add UI Dialog theme (installDir)
 #### Explication:
-First, you have to add to the wixsetup project as a reference the "WixUIExtension" dll provided by Wix Toolset and once imported, you have to use the external element "UIRef" with the appropriate property to generate the chosen dialog theme (in this case, will use the InstallDir).
+First, you have to add to the WixSetup project as a reference the "WixUIExtension" dll provided by Wix Toolset and once imported, you have to use the external element "UIRef" with the appropriate property to generate the chosen dialog theme (in this case, will use the InstallDir).
 #### Test:
-If you run the .msi file generated after build WIX Setup project, for the first time the dialog boxes will be executed and the user will be able to interact with the installer and its characteristics, such as the path where to install the program, accept the license, etc.
+If you run the .msi file generated after build WIX Setup project, for the first time the dialog boxes will be executed and the user will be able to interact with the installer and its dialog features, such as the path where to install the program, accept the license, etc.
 #### Solution:
 Into product fragment:
  ```cpp
@@ -492,7 +493,7 @@ If you run the .msi file generated after build WIX Setup project, the dialog box
 #### Explication:
 You need to do the same as previous TODO using "WixVariable" element and import License.rtf file
 #### Test:
-If you run the .msi file generated after build WIX Setup project, the dialog box where displays the Lore Ipsum language will be changed to the License you imported.
+If you run the .msi file generated after build WIX Setup project, the dialog box where displays the Lorem Ipsum language will be changed to the License you imported.
 #### Solution:
 Into product fragment:
  ```cpp
@@ -500,7 +501,7 @@ Into product fragment:
  ```
 ### TODO8 : Uncomment game components (dll, assets. etc)
 #### Explication:
-Uncomment ComponentGroupRef to make enable the game components and dll's and enjoy the awesome game you have installed
+Uncomment ComponentGroupRef to make enable the game components & dll's and enjoy the awesome game you have installed!
 #### Test:
 If you run the .msi file generated after build WIX Setup project, the executable will work property.
 #### Solution:
