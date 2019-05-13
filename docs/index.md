@@ -123,7 +123,10 @@ Best practices recommend that installation packages be created by experienced pa
 Industry leaders for MSI creation are generally **Advanced Installer**, **Installshield** and the open source solution **WiX**. 
 
 ## MSI packaging tool selected: WIX Toolset
-![](http://wixtoolset.org/content/logo-black-hollow-md.png)
+
+<p align="center">
+<img src="http://wixtoolset.org/content/logo-black-hollow-md.png">
+</p>
 
 WiX came around as a way for developers to allow the creation of a binary **MSI file from regular text source files**. Just like a regular EXE binary, an MSI binary is "compiled" from WiX text XML files. This is a **quantum leap** in terms of managing your release process and understanding changes in the MSI file. 
 
@@ -222,6 +225,9 @@ It's the perfect way to test our setup installer to check if it works on diferen
 ### VirtualBox
 There are several tools that you can use to create virtual machines, but for we like **VirtualBox**. It's available for Windows, OS X, and Linux.
 
+<p align="center">
+<img src="http://blog.nuclex-games.com/wp-content/uploads/2010/04/virtualbox-logo.png">
+</p>
 
 ### How to work with VirtualBox
 Before you start testing software, you'll need to create the secluded place where you can be alone with it. Begin by creating your virtual machine:
