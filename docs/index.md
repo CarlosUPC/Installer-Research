@@ -539,14 +539,14 @@ Best Practices for Enabling Reduced Software Management Costs](https://www.dell.
 
 [Windows Installer for Game Developers](https://docs.microsoft.com/en-us/windows/desktop/dxtecharts/windows-installer-for-game-developers)
 
-![How to: Sign Setup Files with SignTool.exe ](https://en.wikipedia.org/wiki/Microsoft_Windows_SDK)
+[How to: Sign Setup Files with SignTool.exe ](https://en.wikipedia.org/wiki/Microsoft_Windows_SDK)
 
-![SignTool](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/ee290833(v=vs.100))
+[SignTool](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/ee290833(v=vs.100))
 
-![more SignTool](https://docs.microsoft.com/es-es/windows/desktop/SecCrypto/signtool)
+[more SignTool](https://docs.microsoft.com/es-es/windows/desktop/SecCrypto/signtool)
 
-![How to sign an app package using SignTool](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
+[How to sign an app package using SignTool](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
 
-![How to Safely Test Software Without Messing Up Your System](https://lifehacker.com/how-to-safely-test-software-without-messing-up-your-sys-1680608496)
+[How to Safely Test Software Without Messing Up Your System](https://lifehacker.com/how-to-safely-test-software-without-messing-up-your-sys-1680608496)
 
-![Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+[Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
