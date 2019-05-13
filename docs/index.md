@@ -76,7 +76,7 @@ The Windows Installer service was designed to support every phase of the **appli
 To support these functions, the Windows Installer needs to receive instructions from an **installation package** (that was mentioned above). 
 
 <p align="center">
-<img src="https://github.com/CarlosUPC/Installer-Research/blob/master/docs/cycle_life.png" width="600">
+<img src="https://github.com/CarlosUPC/Installer-Research/blob/master/docs/cycle_life.png?raw=true" width="600">
 </p>
 
 ### Windows Installer Technology
