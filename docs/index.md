@@ -182,7 +182,33 @@ Custom actions are the leading causes of deployment errors and failure.
 
 Most of the custom functionalities mentioned above are now available in the WiX framework as a custom C++ dll - and other tools have some similar, custom features.
 
- 
+## Signing an Application Packaging
+Before starting to explain about signing app packages, it is important to understand the meaning of the digital signature. A digital signature is a mathematical scheme based on an algorithm for verifying the authenticity of digital messages or documents. 
+
+Digital signatures are a standard element of most cryptographic protocol suites, and are commonly used for software distribution, financial transactions, contract management software, and in other cases where it is important to detect forgery or tampering.
+
+Signing an application package provides the user with verification that the application data has not been modified after being signed, while confirming the identity of the user or the company that signed it. Therefore, signing an Application Packaging files is an important thing since you help ensure that tampered files are not installed on end-user computers.
+
+### SignTool.exe
+There are many methods and ways to approach this topic. Since we are making use of .msi files for the deployment of applications, the best option at the moment is SignTool.exe, SignTool is a command line tool that is used to sign an application package or a batch of applications with a certificate. 
+
+The tool is installed in the \ Bin folder of the Microsoft Windows Software Development Kit (SDK) installation path. Then we need Microsoft Windows SDK to be able to work with SignTool.exe
+
+### How to sign an Application Package (.msi)
+* On the development computer, install the certificate that you want to sign the file with.
+
+* Open a Visual Studio command prompt.
+
+* Change to the directory that contains the .msi file.
+
+* Sign the .msi file by using the following command:
+
+```cpp
+signtool sign /sha1 CertificateHash SetupNameFile.msi
+```
+
+Also, WiX provides internal tools for inscribing an MSI with the digital signatures like "Insignia". You can obtain more information about it [here](http://wixtoolset.org/documentation/manual/v3/overview/insignia.html)
+
 ## Wix Toolset Integration code
  
 ### Project files and components fragment:
