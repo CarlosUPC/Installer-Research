@@ -209,6 +209,31 @@ signtool sign /sha1 CertificateHash SetupNameFile.msi
 
 Also, WiX provides internal tools for inscribing an MSI with the digital signatures like "Insignia". You can obtain more information about it [here](http://wixtoolset.org/documentation/manual/v3/overview/insignia.html)
 
+## Testing an Application in a Virtual Machine
+
+Before starting to explain about that, it is important to understand what are virtual machines and his purpose. Virtual machines are one of the safest ways to test software. This method allows you to simulate a full operating system, isolated from the rest of your machine.
+It's the perfect way to test our setup installer to check if it works on diferents Operation Systems and its previous versions.
+
+### VirtualBox
+There are several tools that you can use to create virtual machines, but for we like **VirtualBox**. It's available for Windows, OS X, and Linux.
+
+
+### How to work with VirtualBox
+Before you start testing software, you'll need to create the secluded place where you can be alone with it. Begin by creating your virtual machine:
+
+
+* Install and open VirtualBox. Be sure to install the property platform package according to your current OS
+
+* Click "New" to create a new virtual machine. You can check out our guide here for detailed instructions, but the wizard should make it fairly simple. You will need to download the ISO file according to the OS you want to try.
+
+* Install the operating system of your choice on the virtual machine.
+
+* Before you install anything else, take a snapshot. This will allow you to revert back to your original, "fresh install" state after you're done testing.
+
+You can install ISO files from Microsoft Windows 7/8/10 [here](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
+
+You can install VirtualBox machine [here](https://www.virtualbox.org/wiki/Downloads)
+
 ## Wix Toolset Integration code
  
 ### Project files and components fragment:
