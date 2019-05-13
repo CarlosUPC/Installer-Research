@@ -3,17 +3,17 @@
 I am [Carlos Peña Hernando](https://www.linkedin.com/in/carlos-pe%C3%B1a-hernando-aa757aaa/), student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://www.linkedin.com/in/ricardpillosu/?originalSubdomain=es).
 
 
-## The Origins: The phenomenon of Application Packaging
-To put you in context, I would like to talk about the cause at a global level about the existence of application packaging software and therefore about this document that you are reading. Let's start
+## The phenomenon of Application Packaging
+To put you in context, I would like to talk about the cause at a global level about the existence of application packaging software and therefore about this document that you are reading. Let's start!
 
-The maintenance of desktop and notebook systems has become an expensive proposition for many corporate networks due to application management costs. Since then, New application management techniques are being developed to help enterprises administer their existing PC investments more. 
+The maintenance of desktop and notebook systems has become an expensive proposition for many corporate networks due to **application management costs**. Since then, New application management techniques are being developed to help enterprises administer their existing PC investments more efficiently. 
 
-One of them is application packaging that in general terms can help enterprises manage growing volumes of software for desktop and server systems. But what exactly is Application Packaging?
+One of them is **application packaging** that in general terms can help enterprises manage growing volumes of software for desktop and server systems. But what exactly is Application Packaging?
 
 ### What is Application Packaging?
 Application Packaging is the creation of an executable (or file used by a service) that contains the files, registry and logic to install an application onto a device. This executable or file is known as an installation package.
 
-Therefore, Application packaging involves the preparation of standard, structured software installations targeted for automated deployment. This packages must be prepared and meet the installation requirements for an specific environment (corporate standards for software usage and desktop design, multiple languages, regional issues, etc).
+Therefore, Application packaging involves the preparation of standard, structured software installations targeted for automated deployment. This packages must be prepared and meet the **installation requirements** for an specific environment (corporate standards for software usage and desktop design, multiple languages, regional issues, etc).
 
 In addition, packages must be prepared for both commercial software and applications developed in-house.
 
@@ -34,7 +34,7 @@ Applications are typically more than a single executable. They often contain:
 ### Application packages Formats
 
  Application packages include formats such as:
-* Microsoft Windows Installer -> Setup.msi
+* Microsoft Windows Installer -> **Setup.msi**
 * Legacy executables -> Setup.exe
 * Windows store .appx
 * Batch/script files -> Install.vbs, Install.ps1, Install.bat
@@ -42,36 +42,36 @@ Applications are typically more than a single executable. They often contain:
 * Add-in /Plug- in -> .dll / .xla /.xlam / .ppam / .dotm, etc…)
 
 
-## The Evolution: Microsoft Windows Installer
+## Microsoft Windows Installer
 
-To enable this level of application management, Microsoft now provides the Microsoft® Windows® Installer (MSI) service as part of its desktop operating systems.
+To enable this level of application management, Microsoft now provides the **Microsoft® Windows® Installer (MSI)** service as part of its desktop operating systems.
 
 This database-driven service resides on workstations and controls installing, uninstalling, patching, and repairing of software. Input into the Windows Installer is an .msi formatted file as already shown above.
 
 ### MSI Application Management
 
-The Windows Installer service was designed to support every phase of the application management life cycle, providing a service to support each step involved in managing a desktop application from deployment through retirement.
+The Windows Installer service was designed to support every phase of the **application management life cycle**, providing a service to support each step involved in managing a desktop application from deployment through retirement.
 
-To support these functions, the Windows Installer needs to receive instructions from an installation package. 
+To support these functions, the Windows Installer needs to receive instructions from an **installation package** (that was mentioned above). 
 
 ### Windows Installer Technology
 
 Previously, installation packages took the form of a setup.exe file. Unfortunately, inconsistencies in the way independent software vendors and internal software development groups created these installation files sometimes led to complications when administrators attempted to manage automated installations.
 
-The emerging standard is for Windows Installer to use the msiexec.exe program to process the installation packages at an end user’s PC. 
+The emerging standard is for Windows Installer to use the **msiexec.exe** program to process the installation packages at an end user’s PC. 
 The packages follow a standardized database structure containing the information that Windows Installer requires to install or uninstall an application and to run the user interface for the setup. 
 
-In overall, The Windows Installer technology is divided into two parts that work in combination; these include a client-side installer service (Msiexec.exe) and a Microsoft Software Installation (MSI) package file. Windows Installer uses information contained in a package file to install the program.
+In overall, The Windows Installer technology is divided into two parts that work in combination; these include a **client-side installer service (Msiexec.exe)** and a **Microsoft Software Installation (MSI) package file**. Windows Installer uses information contained in a package file to install the program.
 
 ## But Why use Windows Installer?
 
-Windows Installer has many built-in functions that save time and effort. 
+Windows Installer has many **built-in functions** that save time and effort. 
 
 * Automatic add/remove, uninstall, reinstall, and repair support. If an application is already installed, Windows Installer will detect it and display a maintenance user interface instead of an application install interface. 
 
 * In maintenance mode, Windows Installer detects which parts of an application are installed and can allow a user to add or remove features or reinstall the application. 
 
-* The repair functionality also appears in maintenance mode, but is also automatically run every time a shortcut for the application is activated in Windows 2000. The repair functionality is particularly useful for administrators whose users like to recklessly clean up disk space. 
+* The repair functionality also appears in maintenance mode, but is also automatically run every time a shortcut for the application is activated. The repair functionality is particularly useful for administrators whose users like to recklessly clean up disk space. 
  
 * Installer's advertising feature. Advertising allows an application to appear to be installed, but files are not actually installed on the system until the application is activated through a shortcut, extension, or COM server. Advertising makes an application available on the desktop, but since it's not installed until it is activated, companies save on licensing fees and disk space. Once a user clicks on a shortcut or double-clicks on a file associated with that application, the application installs automatically.
  
@@ -83,17 +83,15 @@ Windows Installer has many built-in functions that save time and effort.
 
 **.msi file** : A file with .msi extension is a simple database file that can be read by Microsoft Windows Installer service contained in all recent versions of Microsoft Windows. The database contains the files, registry and instructions to the Windows Installer service in order to install the application.
 
- **Msiexec.exe** : The Msiexec.exe program is a component of Windows Installer. When it is called by Setup, Msiexec.exe uses Msi.dll to read the package (.msi) files, apply any transform (.mst) files, and incorporate command-line options supplied by Setup. 
-
-The installer performs all installation-related tasks, including copying files to the hard disk, making registry modifications, creating shortcuts on the desktop, and displaying dialog boxes to prompt for user installation preferences when necessary.
+ **Msiexec.exe** : The Msiexec.exe program is a component of Windows Installer. When it is called by Setup, Msiexec.exe uses Msi.dll to read the package (.msi) files, apply any transform (.mst) files, and incorporate command-line options supplied by Setup.  The installer performs all installation-related tasks, including copying files to the hard disk, making registry modifications, creating shortcuts on the desktop, and displaying dialog boxes to prompt for user installation preferences when necessary.
 
 When Windows Installer is installed on a computer, it changes the registered file type of .msi files so that if you double-click an .msi file, Msiexec.exe runs with that file.
 
-**MSI Extensions** : Each installation package includes an .msi file containing the installation database, a summary information stream, and data streams for various parts of the installation. The .msi file can also contain one or more transforms, internal source files, and external source files or cabinet files required by the installation
+**MSI Extensions** : Each installation package includes an .msi file containing the installation database, a summary information stream, and data streams for various parts of the installation. The .msi file can also contain one or more transforms, internal source files, and external source files or cabinet files required by the installation.
 
 ### What MSI Supports?
  
-Windows Installer can support applications installed from a network share—referred to as an administrative installation—or locally on an end user’s PC. The downside to using a network share can be that systems receive patches or repairs only when they are connected to the network, which may be a consideration for organizations supporting many notebook users.
+Windows Installer can support applications installed from a **network share—referred** to as an **administrative installation**—or **locally on an end user’s PC**. The downside to using a network share can be that systems receive **patches** or **repairs** only when they are **connected to the network**, which may be a consideration for organizations supporting many notebook users.
 
 ### MSI Packaging and Deployment Tools
 
@@ -101,19 +99,19 @@ Creating MSI files To build the installation package in the correct MSI database
 
 Best practices recommend that installation packages be created by experienced packaging engineers, using **tools** specifically developed for that purpose. 
 
-Industry leaders for MSI creation are generally **Advanced Installer**, **Installshield** and the open source solution **WiX**  - which you seem somewhat familiar with.
+Industry leaders for MSI creation are generally **Advanced Installer**, **Installshield** and the open source solution **WiX**. 
 
 ## MSI packaging tool selected: WIX Toolset
 
 WiX
-* The big plus is the text source files. There is no need to store the source as a binary where it is almost impossible to track changes and do proper version control.
+* The big plus is the **text source files**. There is no need to store the source as a binary where it is almost impossible to track changes and do proper version control.
 
-    * Proper text sources make all the difference for development teams in terms of branching, versioning and merging. It is a quantum leap (in my opinion particularly for in-house development in large corporations - where process is complex, turnaround is quick and there are many developers).
+    * Proper text sources make all the difference for development teams in terms of branching, versioning and merging. 
     * The need for and use of text source files was central to the creation of the WiX toolkit. 
-    *  Some deployment tools that store the installer as binaries could end up in situations where the binary source would exhibit mysterious problems that could never be tracked down properly.
+    * Some deployment tools that store the installer as binaries could end up in situations where the binary source would exhibit mysterious problems that could never be tracked down properly.
  
-* Rock solid, very few significant bugs.
-    * For those who have struggled with long-standing, intermittent, unexplainable bugs in other tools, this is a godsend. {War stories removed}.
+* Rock **solid**, very **few significant bugs**.
+    * For those who have struggled with long-standing, intermittent, unexplainable bugs in other tools, this is a godsend. 
     * And even better: problems actually seem to get fixed in WiX, sometimes with community help - as is appropriate for an open source toolkit. Most of the time it seems the core team takes care of it though.
  
 * Very feature rich, but somewhat hard to use at times.
@@ -122,35 +120,35 @@ WiX
     * Exceptional customizability for complex things such as IIS, COM+, SQL Server, permissioning, firewall rules, etc... "Everything" is possible, but somewhat involved at times.
     * WiX effectively "extends Windows Installer" with new and much needed functionality. This is a massive benefit for everyone who previously had to "roll their own" solutions - often for things that seemed trivial (but was still very error prone).
     * The power of these extensions can not be overstated. You can get rid of a lot of self-written, complex custom actions in favor of tested solutions. With proper rollback support! (a much neglected feature in vendor setups - in my experience almost all of them - causing unclean system state after aborted setups).
-    * I have personal experience writing a C++ dll with custom actions for common tasks with proper rollback support, and the amount of work was staggering - especially the QA of the actual rollback feature.
+    * Staggering work about C++ dll with custom actions for common tasks with proper rollback support - especially the QA of the actual rollback feature.
 
-* A remarkable lack of GUI tools and very few good samples available - particularly for WiX 4.
-* Full integration in Visual Studio, with IntelliSense.
-* It's free (!). Every developer can build the setup. Someone must own it though(!). Really ;-).
-* It is Open Source too. The "community":[https://github.com/wixtoolset](https://github.com/wixtoolset). 
+* A remarkable lack of GUI tools and very few good samples available.
+* **Full integration** in Visual Studio, with IntelliSense.
+* It's **free**. Every developer can build the setup. Someone must own it though.
+* It is **Open Source** too. The "community":[https://github.com/wixtoolset](https://github.com/wixtoolset). 
 
 
 ## Purpose of Application Packaging
 
-Before we talked about the cause of the existence of application packaging in a global and generic way but that concrete purposes and benefits are sought in their use?
-* Only the simplest applications can work with a simple file copy, and even then you need to have a convenient way to actually download and do the copying of the files to the right location
+Before we talked about the cause of the existence of application packaging in a global and generic way but What are the concrete purposes and benefits are sought in their use?
+* Only the simplest applications can work with a simple file copy, and even then you need to have a convenient way to actually download and do the copying of the files to the right location.
 
-* The setup is also a marketing tool that can be used for branding and consistency across products as well as allowing installation of a trial version of the product
+* The setup is also a **marketing tool** that can be used for branding and consistency across products as well as allowing installation of a trial version of the product.
 
-* a setup provides upgrade and patching features for new versions as well as uninstall and cleanup of the system when the user wants to remove your software
+* a setup provides **upgrade and patching features** for new versions as well as uninstall and cleanup of the system when the user wants to remove your software.
 
-* A good setup may also be signed with digital certificates to ensure the file can not be hampered with in transit, and that the vendor is certifiable and hence serious
+* A good setup may also be signed with **digital certificates** to ensure the file can not be hampered with in transit, and that the vendor is certifiable and hence serious.
 
-* A solid setup and deployment prevents piracy 
+* A solid setup and deployment **prevents piracy**. 
 
 ## The Complexity of Deployment
-Deployment is a simple concept, with a complicated mix of variables that can cause the most mysterious errors. In this section it will discuss the most common and important problems generated by the deployment of software and applications.
+Deployment is a simple concept, with a complicated mix of variables that can cause the most mysterious errors. In this section it will discuss the most common and important **problems** generated by the deployment of software and applications.
 
-* Errors in deployment are cumulative in the sense that once you have a deployed error, you generally have no access to the machine in question for debugging - and the fix could easily do more damage. You are managing a delivery process, not just debugging code and binaries. 
+* Errors in deployment are **cumulative** in the sense that once you have a deployed error, you generally have no access to the machine in question for debugging - and the fix could easily do more damage. You are managing a delivery process, not just debugging code and binaries. 
 
-* Deployment (setups) is therefore the complex process of migrating any computer from one stable state to another. This requires a disciplined approach. The setup should install all required files and settings and ensure the product is configured for first launch or ready to be configured upon launch without failure.
+* Deployment (setups) is therefore the complex process of migrating any computer from one stable state to another. This requires a **disciplined approach**. The setup should install all required files and settings and ensure the product is configured for first launch or ready to be configured upon launch without failure.
 
-* The list of things a setup may need to do is growing all the time, and for every new versions of Windows it seems new obstacles are put in place to make deployment harder (UAC prompts, self-repair lockdown on terminal servers, changed core MSI caching behavior, new folder redirects,etc)
+* The list of things a setup may need to do is growing all the time, and for every **new versions of Windows** it seems new obstacles are put in place to make deployment harder (UAC prompts, self-repair lockdown on terminal servers, changed core MSI caching behavior, new folder redirects,etc)
 
 ## Deployment Tasks
 
@@ -159,16 +157,16 @@ The tasks and features needed in a setup range from the very fundamental and bas
 ### Set up basics
 All third party tools provide good support for these setup fundamentals, but there are some differences. The installation of prerequisites may be the area where third party tools and free frameworks like WiX differ the most in terms of ease of use. The following list shows the fundamentals which all setup must built-in. 
 
-* Check if the system is suitable for installation for the package in question.
+* Check if the **system** is **suitable** for installation for the package in question.
 
-* Scan for presence and if necessary install prerequisites and runtimes.
+* Scan for presence and if necessary install **prerequisites and runtimes**.
 
-* Provide a GUI suitable for input of required settings from the user.
+* Provide a **GUI suitable** for input of required settings from the user.
 
-* Allow installation in silent mode for corporate use.
+* Allow installation in **silent mode** for corporate use.
 
 ### Custom Actions
-When there is no built-in support for a certain operation or task in Windows Installer itself, or in any of the various third party tools available, you are left having to implement the feature yourself.
+When there is no built-in support for a certain operation or task in Windows Installer itself, or in any of the various third party tools available, you are left having to **implement the feature yourself**.
 
 When you use Windows Installer, this involves running custom actions of various types (Windows Installer's mechanism for running executable, custom installation logic during installation).
 
@@ -176,23 +174,23 @@ Custom actions are purpose built executables (binaries: dll, exe) and scripts ca
 
 There are different custom action types: implemented as scripts (JavaScript, VBScript), .NET binaries (C#, VB.NET, DTF,...), PowerShell scripts, etc.
 
-Custom actions that make modifications to the system run with elevated rights so that changes can be made to the system even if the logged on user does not have admin rights. There is essentially no limit to what these custom actions can do. They are armed and dangerous.
+Custom actions that make modifications to the system run with **elevated rights** so that changes can be made to the system even if the logged on user does not have admin rights. There is essentially no limit to what these custom actions can do. **They are armed and dangerous**.
 
 Custom actions are the leading causes of deployment errors and failure.
 
 Most of the custom functionalities mentioned above are now available in the WiX framework as a custom C++ dll - and other tools have some similar, custom features.
 
 ## Signing an Application Packaging
-Before starting to explain about signing app packages, it is important to understand the meaning of the digital signature. A digital signature is a mathematical scheme based on an algorithm for verifying the authenticity of digital messages or documents. 
+Before starting to explain about signing app packages, it is important to understand the meaning of the **digital signature**. A digital signature is a mathematical scheme based on algorithms for verifying the authenticity of digital messages or documents. 
 
 Digital signatures are a standard element of most cryptographic protocol suites, and are commonly used for software distribution, financial transactions, contract management software, and in other cases where it is important to detect forgery or tampering.
 
 Signing an application package provides the user with verification that the application data has not been modified after being signed, while confirming the identity of the user or the company that signed it. Therefore, signing an Application Packaging files is an important thing since you help ensure that tampered files are not installed on end-user computers.
 
 ### SignTool.exe
-There are many methods and ways to approach this topic. Since we are making use of .msi files for the deployment of applications, the best option at the moment is SignTool.exe, SignTool is a command line tool that is used to sign an application package or a batch of applications with a certificate. 
+There are many methods and ways to approach this topic. Since we are making use of .msi files for the deployment of applications, the best option at the moment is **SignTool.exe**, SignTool is a command line tool that is used to **sign an application package** or a batch of applications with a certificate. 
 
-The tool is installed in the \ Bin folder of the Microsoft Windows Software Development Kit (SDK) installation path. Then we need Microsoft Windows SDK to be able to work with SignTool.exe
+The tool is installed in the \ Bin folder of the Microsoft Windows Software Development Kit (SDK) installation path. Then we need **Microsoft Windows SDK** to be able to work with SignTool.exe. You can download SDK Windows [here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 
 ### How to sign an Application Package (.msi)
 * On the development computer, install the certificate that you want to sign the file with.
@@ -230,9 +228,9 @@ Before you start testing software, you'll need to create the secluded place wher
 
 * Before you install anything else, take a snapshot. This will allow you to revert back to your original, "fresh install" state after you're done testing.
 
-You can install ISO files from Microsoft Windows 7/8/10 [here](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
+You can download ISO files from Microsoft Windows 7/8/10 [here](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
 
-You can install VirtualBox machine [here](https://www.virtualbox.org/wiki/Downloads)
+You can download VirtualBox machine [here](https://www.virtualbox.org/wiki/Downloads)
 
 ## Wix Toolset Integration code
  
