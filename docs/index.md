@@ -76,7 +76,8 @@ The Windows Installer service was designed to support every phase of the **appli
 To support these functions, the Windows Installer needs to receive instructions from an **installation package** (that was mentioned above). 
 
 <p align="center">
-<img src="https://github.com/CarlosUPC/Installer-Research/blob/master/docs/cycle_life.png">
+<img src="https://github.com/CarlosUPC/Installer-Research/blob/master/docs/cycle_life.png?raw=true" 
+width="600">
 </p>
 
 ### Windows Installer Technology
@@ -115,7 +116,8 @@ When Windows Installer is installed on a computer, it changes the registered fil
 **MSI Extensions** : Each installation package includes an .msi file containing the installation database, a summary information stream, and data streams for various parts of the installation. The .msi file can also contain one or more transforms, internal source files, and external source files or cabinet files required by the installation.
 
 <p align="center">
-<img src="https://github.com/CarlosUPC/Installer-Research/blob/master/docs/extensions_msi.png">
+<img src="https://github.com/CarlosUPC/Installer-Research/blob/master/docs/extensions_msi.png?raw=true" 
+width="600">
 </p>
 
 ### What MSI Supports?
