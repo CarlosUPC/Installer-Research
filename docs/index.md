@@ -550,3 +550,7 @@ Best Practices for Enabling Reduced Software Management Costs](https://www.dell.
 [How to Safely Test Software Without Messing Up Your System](https://lifehacker.com/how-to-safely-test-software-without-messing-up-your-sys-1680608496)
 
 [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+[Windows Installer for Game Developers](https://docs.microsoft.com/en-us/windows/desktop/dxtecharts/windows-installer-for-game-developers)
+
+[Installation and Maintenance of Games](https://docs.microsoft.com/en-us/windows/desktop/dxtecharts/installation-and-maintenance-of-games)
